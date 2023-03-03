@@ -10,9 +10,9 @@ function Login() {
                         <h1>Login</h1>
                         <input type="text" name="email"  placeholder="Email"></input>
                         <input type="password" name="password" placeholder="Password" ></input>
-                        <div className="button" >Login</div>
+                        <button className="button" >Login</button>
                         <div>or</div>
-                        <div className="button" >Register</div>
+                        <button className="button" >Register</button>
                     </div>
                 </div>
 
