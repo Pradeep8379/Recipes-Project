@@ -14,7 +14,7 @@ router.post("/register", async (req, res) => {
   const hashedPassword = await bcrypt.hash(password, 10);
   const newUser = new UserModel({ username, password: hashedPassword });
   await newUser.save();
-  res.json({ message: "User registered successfully" });
+  return res.json({ message: "User registered successfully" });
 });
 
 router.post("/login", async (req, res) => {
@@ -34,7 +34,7 @@ router.post("/login", async (req, res) => {
       .json({ message: "Username or password is incorrect" });
   }
   const token = jwt.sign({ id: user._id }, "secret");
-  res.json({ token, userID: user._id });
+  return res.json({ token, userID: user._id });
 });
 
 export { router as userRouter };
